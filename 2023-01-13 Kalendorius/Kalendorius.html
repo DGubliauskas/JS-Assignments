@@ -10,21 +10,19 @@
         body {
             margin: 0;
             vertical-align: middle;
-            font-family:system-ui;
+            font-family: system-ui;
         }
 
         table {
             width: 100%;
-            text-align:center;
+            text-align: center;
             table-layout: fixed;
-            border-spacing:0;
+            border-spacing: 0;
+            
         }
 
         thead {
-            font-size:large;
-            background-color: rgb(136, 240, 136);
-            color:rgb(73, 67, 67);
-            
+            color: rgba(14, 68, 0, 0.804);
         }
 
         .box {
@@ -33,7 +31,8 @@
             width: 800px;
             height: 1200px;
             background-color: rgb(243, 250, 177);
-            margin: auto;
+            margin:auto;
+            padding:4px;
         }
 
         .calendar_rows {
@@ -42,49 +41,66 @@
             flex-direction: row;
             height: 25%;
             width: 100%;
-            margin-top:10px;
-            margin-bottom:10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            
         }
 
         .months {
             display: flex;
             width: 33.33%;
             height: 100%;
+            margin: 5px;
+            box-shadow: 4px 0px 3px -3px rgba(0, 0, 0, 0.436);
+            flex-direction: column;
             
-            margin:5px;
-            flex-direction:column;
         }
 
         .days {
-            display:flex;
-            height:80%;
-            width:100%;
+            display: flex;
+            height: 100%;
+            width: 100%;
             justify-content: center;
-            object-fit:contain;
+            object-fit: contain;
             word-break: break-all;
-            align-content:stretch;
+            align-content: stretch;
             background-color: white;
             
+            
+
         }
 
         .holidays {
-            display:flex;
-            height:20%;
-            width:90%;
-            flex-direction:column;
-            margin:5%;
-            word-break:break-word;
-            font-size: small;
-        
+            display: flex;
+            height: 20%;
+            flex-direction: column;
+            padding-left: 10px;
+            word-break: break-word;
+            font-size: 12px;
+            background:linear-gradient(0deg, rgb(243, 250, 177), rgba(255, 255, 255, 0.799) );
+            
+            
         }
 
         .sekmadienis {
-            color:rgb(223, 33, 33);
-
+            color: rgb(223, 33, 33);
         }
 
         .sventine_diena {
-            background-color: rgb(198, 150, 150)
+            background: radial-gradient(rgb(243, 250, 177) 25%, white 75%);
+        }
+
+        .gradient_header_top{
+            background:linear-gradient(0deg, rgb(136, 240, 136), rgba(243, 250, 177, 0.868) );
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:18px;
+            font-style: italic;
+        }
+
+        .gradient_header{
+            background:linear-gradient(rgb(136, 240, 136), rgba(255, 255, 255, 0.94) );
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size:16px;
         }
     </style>
 </head>
@@ -96,10 +112,10 @@
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr class="gradient_header_top">
                                 <th colspan="7">Sausis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -112,7 +128,7 @@
                         <tbody>
                             <tr>
                                 <td colspan="6"></td>
-                                <td  class="sekmadienis sventine_diena">1</td>
+                                <td class="sekmadienis sventine_diena">1</td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -159,18 +175,18 @@
                     </table>
                 </div>
                 <div class="holidays">
-                    01-01 Naujieji metai
+                  <nobr><b>01-01</b> Naujieji metai</nobr>
                 </div>
             </div>
-            
+
             <div class="months">
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Vasaris</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -187,7 +203,7 @@
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
-                                <td  class="sekmadienis">5</td>
+                                <td class="sekmadienis">5</td>
                             </tr>
                             <tr>
                                 <td>6</td>
@@ -216,30 +232,30 @@
                                 <td>25</td>
                                 <td class="sekmadienis">26</td>
                             </tr>
-                            <tr> 
+                            <tr>
                                 <td>27</td>
                                 <td>28</td>
                                 <td colspan="5"></td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    02-16 Lietuvos Valstybės atkūrimo diena<br>
-                    02-21 Užgavėnės
+                    <nobr><b>02-16</b> Lietuvos Valstybės atkūrimo diena</nobr>
+                    <nobr><b>02-21</b> Užgavėnės</nobr>
                 </div>
             </div>
             <div class="months">
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Kovas</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -285,7 +301,7 @@
                                 <td>25</td>
                                 <td class="sekmadienis">26</td>
                             </tr>
-                            <tr> 
+                            <tr>
                                 <td>27</td>
                                 <td>28</td>
                                 <td>29</td>
@@ -294,13 +310,13 @@
                                 <td colspan="2"></td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    03-11 Nepriklausomybės atkūrimo diena
+                    <nobr><b>03-11</b> Nepriklausomybės atkūrimo diena</nobr>
                 </div>
             </div>
         </div>
@@ -309,10 +325,10 @@
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Balandis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -327,7 +343,7 @@
                                 <td colspan="5"></td>
                                 <td>1</td>
                                 <td class="sekmadienis">2</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -337,7 +353,7 @@
                                 <td>7</td>
                                 <td>8</td>
                                 <td class="sekmadienis sventine_diena">9</td>
-                                
+
                             </tr>
                             <tr>
                                 <td class="sekmadienis sventine_diena">10</td>
@@ -347,7 +363,7 @@
                                 <td>14</td>
                                 <td>15</td>
                                 <td class="sekmadienis">16</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>17</td>
@@ -357,9 +373,9 @@
                                 <td>21</td>
                                 <td>22</td>
                                 <td class="sekmadienis">23</td>
-                                
+
                             </tr>
-                            <tr> 
+                            <tr>
                                 <td>24</td>
                                 <td>25</td>
                                 <td>26</td>
@@ -369,24 +385,24 @@
                                 <td class="sekmadienis">30</td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    04-09 Velykos<br>
-                    04-10 Velykų antroji diena
+                    <nobr><b>04-09</b> Velykos</nobr>
+                    <nobr><b>04-10</b> Velykų antroji diena</nobr>
                 </div>
             </div>
             <div class="months">
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Gegužė</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -398,7 +414,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                
+
                                 <td class="sekmadienis sventine_diena">1</td>
                                 <td>2</td>
                                 <td>3</td>
@@ -408,7 +424,7 @@
                                 <td class="sekmadienis sventine_diena">7</td>
                             </tr>
                             <tr>
-                                
+
                                 <td>8</td>
                                 <td>9</td>
                                 <td>10</td>
@@ -418,7 +434,7 @@
                                 <td class="sekmadienis">14</td>
                             </tr>
                             <tr>
-                               
+
                                 <td>15</td>
                                 <td>16</td>
                                 <td>17</td>
@@ -428,7 +444,7 @@
                                 <td class="sekmadienis">21</td>
                             </tr>
                             <tr>
-                                
+
                                 <td>22</td>
                                 <td>23</td>
                                 <td>24</td>
@@ -437,32 +453,32 @@
                                 <td>27</td>
                                 <td class="sekmadienis">28</td>
                             </tr>
-                            <tr> 
-                                
+                            <tr>
+
                                 <td>29</td>
                                 <td>30</td>
                                 <td>31</td>
                                 <td colspan="4"></td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    05-01 Tarptautinė darbo diena<br>
-                    05-07 Motinos diena
+                    <nobr><b>05-01</b> Tarptautinė darbo diena<br>
+                    <b>05-07</b> Motinos diena</nobr>
                 </div>
             </div>
             <div class="months">
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Birželis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -481,7 +497,7 @@
                                 <td class="sekmadienis sventine_diena">4</td>
                             </tr>
                             <tr>
-                                
+
                                 <td>5</td>
                                 <td>6</td>
                                 <td>7</td>
@@ -489,10 +505,10 @@
                                 <td>9</td>
                                 <td>10</td>
                                 <td class="sekmadienis">11</td>
-                                
+
                             </tr>
                             <tr>
-                                
+
                                 <td>12</td>
                                 <td>13</td>
                                 <td>14</td>
@@ -500,10 +516,10 @@
                                 <td>16</td>
                                 <td>17</td>
                                 <td class="sekmadienis">18</td>
-                                
+
                             </tr>
                             <tr>
-                                
+
                                 <td>19</td>
                                 <td>20</td>
                                 <td>21</td>
@@ -511,10 +527,10 @@
                                 <td>23</td>
                                 <td class="sekmadienis sventine_diena">24</td>
                                 <td class="sekmadienis">25</td>
-                                
+
                             </tr>
-                            <tr> 
-                                
+                            <tr>
+
                                 <td>26</td>
                                 <td>27</td>
                                 <td>28</td>
@@ -523,14 +539,14 @@
                                 <td colspan="2"></td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    06-04 Tėvo diena<br>
-                    06-24 Joninės
+                    <nobr><b>06-04</b> Tėvo diena<br>
+                    <b>06-24 </b>Joninės</nobr>
                 </div>
             </div>
         </div>
@@ -539,10 +555,10 @@
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Liepa</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -557,7 +573,7 @@
                                 <td colspan="5"></td>
                                 <td>1</td>
                                 <td class="sekmadienis">2</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -567,7 +583,7 @@
                                 <td>7</td>
                                 <td>8</td>
                                 <td class="sekmadienis">9</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>10</td>
@@ -577,7 +593,7 @@
                                 <td>14</td>
                                 <td>15</td>
                                 <td class="sekmadienis">16</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>17</td>
@@ -587,9 +603,9 @@
                                 <td>21</td>
                                 <td>22</td>
                                 <td class="sekmadienis">23</td>
-                                
+
                             </tr>
-                            <tr> 
+                            <tr>
                                 <td>24</td>
                                 <td>25</td>
                                 <td>26</td>
@@ -606,17 +622,17 @@
                     </table>
                 </div>
                 <div class="holidays">
-                    07-06 Karaliaus Mindaugo karūnavimo diena
+                    <nobr><b>07-06</b> Karaliaus Mindaugo karūnavimo diena</nobr>
                 </div>
             </div>
             <div class="months">
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Rugpjūtis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -637,7 +653,7 @@
                                 <td class="sekmadienis">6</td>
                             </tr>
                             <tr>
-                                
+
                                 <td>7</td>
                                 <td>8</td>
                                 <td>9</td>
@@ -647,7 +663,7 @@
                                 <td class="sekmadienis">13</td>
                             </tr>
                             <tr>
-                                
+
                                 <td>14</td>
                                 <td class="sekmadienis sventine_diena">15</td>
                                 <td>16</td>
@@ -657,7 +673,7 @@
                                 <td class="sekmadienis">20</td>
                             </tr>
                             <tr>
-                                
+
                                 <td>21</td>
                                 <td>22</td>
                                 <td>23</td>
@@ -666,8 +682,8 @@
                                 <td>26</td>
                                 <td class="sekmadienis">27</td>
                             </tr>
-                            <tr> 
-                                
+                            <tr>
+
                                 <td>28</td>
                                 <td>29</td>
                                 <td>30</td>
@@ -675,23 +691,23 @@
                                 <td colspan="3"></td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    08-15 Žolinė
+                    <nobr><b>08-15</b> Žolinė</nobr>
                 </div>
             </div>
             <div class="months">
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Rugsėjis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -707,7 +723,7 @@
                                 <td>1</td>
                                 <td>2</td>
                                 <td class="sekmadienis">3</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -717,8 +733,8 @@
                                 <td>8</td>
                                 <td>9</td>
                                 <td class="sekmadienis">10</td>
-                                
-                                
+
+
                             </tr>
                             <tr>
                                 <td>11</td>
@@ -728,8 +744,8 @@
                                 <td>15</td>
                                 <td>16</td>
                                 <td class="sekmadienis">17</td>
-                                
-                                
+
+
                             </tr>
                             <tr>
                                 <td>18</td>
@@ -739,10 +755,10 @@
                                 <td>22</td>
                                 <td>23</td>
                                 <td class="sekmadienis">24</td>
-                                
-                                
+
+
                             </tr>
-                            <tr> 
+                            <tr>
                                 <td>25</td>
                                 <td>26</td>
                                 <td>27</td>
@@ -752,7 +768,7 @@
                                 <td colspan="1"></td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -765,10 +781,10 @@
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Spalis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -833,10 +849,10 @@
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
+                            <tr  class="gradient_header_top">
                                 <th colspan="7">Lapkritis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -882,7 +898,7 @@
                                 <td>25</td>
                                 <td class="sekmadienis">26</td>
                             </tr>
-                            <tr> 
+                            <tr>
                                 <td>27</td>
                                 <td>28</td>
                                 <td>29</td>
@@ -890,24 +906,24 @@
                                 <td colspan="3"></td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    11-01 Visų šventųjų diena<br>
-                    11-02 Vėlinės
+                    <nobr><b>11-01</b> Visų šventųjų diena<br>
+                    <b>11-02</b> Vėlinės</nobr>
                 </div>
             </div>
             <div class="months">
                 <div class="days">
                     <table>
                         <thead>
-                            <tr>
-                                <th colspan="7">Rugsėjis</th>
+                            <tr  class="gradient_header_top">
+                                <th colspan="7">Gruodis</th>
                             </tr>
-                            <tr>
+                            <tr class="gradient_header">
                                 <th>Pr</th>
                                 <th>An</th>
                                 <th>Tr</th>
@@ -923,7 +939,7 @@
                                 <td>1</td>
                                 <td>2</td>
                                 <td class="sekmadienis">3</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -933,8 +949,8 @@
                                 <td>8</td>
                                 <td>9</td>
                                 <td class="sekmadienis">10</td>
-                                
-                                
+
+
                             </tr>
                             <tr>
                                 <td>11</td>
@@ -944,8 +960,8 @@
                                 <td>15</td>
                                 <td>16</td>
                                 <td class="sekmadienis">17</td>
-                                
-                                
+
+
                             </tr>
                             <tr>
                                 <td>18</td>
@@ -954,11 +970,11 @@
                                 <td>21</td>
                                 <td>22</td>
                                 <td>23</td>
-                                <td  class="sekmadienis sventine_diena">24</td>
-                                
-                                
+                                <td class="sekmadienis sventine_diena">24</td>
+
+
                             </tr>
-                            <tr> 
+                            <tr>
                                 <td class="sekmadienis sventine_diena">25</td>
                                 <td class="sekmadienis sventine_diena">26</td>
                                 <td>27</td>
@@ -968,15 +984,15 @@
                                 <td class="sekmadienis">31</td>
                             </tr>
                             <tr>
-                                <td colspan="7"></td>
+                                <td colspan="7"><br /></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="holidays">
-                    12-24 Šv. Kūčios<br>
-                    12-25 Šv. Kalėdos<br>
-                    12-26 Šv. Kalėdų antroji diena
+                    <nobr><b>12-24</b> Šv. Kūčios<br>
+                    <b>12-25</b> Šv. Kalėdos<br>
+                    <b>12-26</b> Šv. Kalėdų antroji diena</nobr>
                 </div>
             </div>
         </div>
