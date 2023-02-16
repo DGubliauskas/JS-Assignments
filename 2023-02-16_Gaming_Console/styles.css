@@ -2,6 +2,106 @@ body {
     margin: 0 auto
 }
 
+.consoleSet {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+}
+
 .TV {
-    background-image: url("../2023-02-16\ Gaming\ Console/");
+    position: relative;
+    height: 37rem;
+    width: 100%;
+}
+
+.TV img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.TV .screen {
+    background-color: gray;
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    width: 770px;
+    height: 470px;
+    
+}
+
+.console {
+    position: relative;
+    height: 20rem;
+    width: 100%;
+    text-align: center
+
+}
+
+.console img {
+    
+    height: 100%;
+    
+}
+
+.buttonlogo {
+    position: absolute;
+    top: 24px;
+    left: 383px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+}
+.buttonY {
+    position: absolute;
+    top: 40px;
+    left: 500px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: yellow;
+}
+.buttonX {
+    position: absolute;
+    top: 70px;
+    left: 470px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: blue;
+}
+.buttonB {
+    position: absolute;
+    top: 72px;
+    left: 530px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: red;
+}
+.buttonA {
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: green;
+}
+
+.greets {
+    background-color: red;
+    font-size: 140px;
+    align-items: center;
+    
+}
+
+.list img {
+    width: 150px;
+    height: 250px;
+    color: red;
 }
