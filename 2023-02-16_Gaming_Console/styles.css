@@ -1,5 +1,19 @@
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }  
+
+ @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }  
+    
 body {
     margin: 0 auto
+}
+
+thead {
+    text-align:center;   
 }
 
 .consoleSet {
@@ -15,14 +29,12 @@ body {
     height: 37rem;
     width: 100%;
 }
-
 .TV img {
     max-width: 100%;
     max-height: 100%;
     height: 100%;
     width: 100%;
 }
-
 .TV .screen {
     background-color: gray;
     position: absolute;
@@ -32,7 +44,6 @@ body {
     height: 470px;
     
 }
-
 .console {
     position: relative;
     height: 20rem;
@@ -40,11 +51,23 @@ body {
     text-align: center
 
 }
-
 .console img {
-    
     height: 100%;
-    
+}
+ 
+.buttonY:hover, 
+.buttonX:hover, 
+.buttonB:hover,
+.buttonA:hover {
+cursor: pointer;
+border-color: white;
+border-style:solid;
+}
+
+.buttonlogo:hover {
+    cursor: pointer;
+border-color: black;
+border-style:solid;
 }
 
 .buttonlogo {
@@ -54,7 +77,6 @@ body {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: white;
 }
 .buttonY {
     position: absolute;
@@ -63,7 +85,6 @@ body {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: yellow;
 }
 .buttonX {
     position: absolute;
@@ -72,7 +93,6 @@ body {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: blue;
 }
 .buttonB {
     position: absolute;
@@ -81,7 +101,6 @@ body {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: red;
 }
 .buttonA {
     position: absolute;
@@ -90,18 +109,96 @@ body {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: green;
-}
-
-.greets {
-    background-color: red;
-    font-size: 140px;
-    align-items: center;
     
 }
+.greets {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 120px;
+    background-image: url("../2023-02-16_Gaming_Console/assets/background.jpg");
+    background-size: cover;
+}
+    
+.animated {
+    animation: fadeIn ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
-.list img {
-    width: 150px;
-    height: 250px;
+.legend {
+    display: flex;
+    font-size: 26px;
+    gap: 50px;
+    padding: 10px;
+}
+
+.legend div {
+    display: flex;
+    gap: 15px;
+    color: rgb(229, 255, 0);
+}
+
+.yBut,
+.xBut,
+.bBut,
+.aBut {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: black;
+    text-align: center;
+    font-weight: 700;
+}
+
+.yBut {
+    color: yellow;
+}
+
+.xBut {
+    color: rgb(0, 179, 255);
+}
+
+.bBut {
     color: red;
+}
+
+.aBut {
+    color: green;
+}
+
+.legend h2 {
+    color:white;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+.greetsText {
+    font-size: 140px;
+}
+.bye {
+    background-image: url("../2023-02-16_Gaming_Console/assets/background.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    font-size: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.listImages {
+    width: 100px;
+    height: 100px;
+    border-spacing: 2rem;
+}
+
+.tdAlign {
+    text-align: center;
+    vertical-align: middle;
 }
