@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="photo"></div>
+    <div class="cocktail-name"></div>
+    <div class="glass"></div>
+    <div class="alc-vol"></div>
+    <div class="ingredients">
+        <ul>
+            <span class="ingredient-list"></span>
+        </ul>
+    </div>
+
+    <script>
+        fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+            .then(resp => resp.json())
+            .then(resp => {
+                console.log(resp)
+                const drinkInfo = resp.drinks[0];
+                console.log(drinkInfo);
+                document.querySelector('.photo').innerHTML = `<img src=${drinkInfo.strDrinkThumb} />`;
+                document.querySelector('.cocktail-name').innerHTML = `${drinkInfo.strDrink}`;
+                document.querySelector('.glass').innerHTML = "Glass: " + `${drinkInfo.strGlass}`;
+                document.querySelector('.alc-vol').innerHTML = "This drink is " + `<strong>${drinkInfo.strAlcoholic}</strong>`;
+                
+                const laikina = [
+                    `${drinkInfo.strIngredient1}`,
+                    `${drinkInfo.strIngredient2}`,
+                    `${drinkInfo.strIngredient3}`,
+                    `${drinkInfo.strIngredient4}`,
+                    `${drinkInfo.strIngredient5}`,
+                    `${drinkInfo.strIngredient6}`,
+                    `${drinkInfo.strIngredient7}`,
+                    `${drinkInfo.strIngredient8}`,
+                    `${drinkInfo.strIngredient9}`,
+                    `${drinkInfo.strIngredient10}`,
+                    `${drinkInfo.strIngredient11}`,
+                    `${drinkInfo.strIngredient12}`,
+                    `${drinkInfo.strIngredient13}`,
+                    `${drinkInfo.strIngredient14}`,
+                    `${drinkInfo.strIngredient15}`,
+                ]
+
+                const laikina2 = [
+                    `${drinkInfo.strMeasure1}`,
+                    `${drinkInfo.strMeasure2}`,
+                    `${drinkInfo.strMeasure3}`,
+                    `${drinkInfo.strMeasure4}`,
+                    `${drinkInfo.strMeasure5}`,
+                    `${drinkInfo.strMeasure6}`,
+                    `${drinkInfo.strMeasure7}`,
+                    `${drinkInfo.strMeasure8}`,
+                    `${drinkInfo.strMeasure9}`,
+                    `${drinkInfo.strMeasure10}`,
+                    `${drinkInfo.strMeasure11}`,
+                    `${drinkInfo.strMeasure12}`,
+                    `${drinkInfo.strMeasure13}`,
+                    `${drinkInfo.strMeasure14}`,
+                    `${drinkInfo.strMeasure15}`,
+                ]
+                
+
+                for (i=0; i < laikina.length; i++) {
+                    if (laikina[i] != 'null') {
+                        document.querySelector('.ingredient-list').innerHTML += `<ul>${laikina[i]} ${laikina2[i]}</ul>`;
+                    }
+                }
+                
+            })
+    </script>
+</body>
+
+</html>
