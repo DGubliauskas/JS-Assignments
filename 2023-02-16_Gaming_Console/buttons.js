@@ -68,6 +68,10 @@ const back = () => {
 //X (mėlynas) mygtukas atvaizduoja galimų nusipirkti žaidimų sąrašą. 
 //Prie kiekvieno žaidimo rodoma nuotrauka, pavadinimas ir kaina. Žaidimus patalpinkite masyve.
 
+const a = 5;
+a = 7;
+console.log(a)
+
 const games = [
     {
         nuotrauka: `<img src="../2023-02-16_Gaming_Console/assets/games/Kelyje.jpg"></img>`,
