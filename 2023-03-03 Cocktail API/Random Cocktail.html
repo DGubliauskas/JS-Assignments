@@ -88,8 +88,6 @@
                 document.querySelector('.glass').innerHTML = "Glass: " + `${drinkInfo.strGlass}`;
                 document.querySelector('.alc-vol').innerHTML = `<strong>${drinkInfo.strAlcoholic}</strong>`;
 
-                
-                
                 const laikina = [
                     `${drinkInfo.strIngredient1}`,
                     `${drinkInfo.strIngredient2}`,
@@ -108,14 +106,6 @@
                     `${drinkInfo.strIngredient15}`,
                 ]
 
-                let ingredients = [];
-
-
-                for (let i = 1; i <= 15; i++) {
-                    let singleIngredient = "`" + "${drinkInfo.strIngredient" + `${[i]}` + "}" + "`";
-                    ingredients.push({singleIngredient});
-                }
-
                 const laikina2 = [
                     `${drinkInfo.strMeasure1}`,
                     `${drinkInfo.strMeasure2}`,
@@ -133,16 +123,11 @@
                     `${drinkInfo.strMeasure14}`,
                     `${drinkInfo.strMeasure15}`,
                 ]
-
-
                 for (i = 0; i < laikina.length; i++) {
                     if (laikina[i] != 'null' && laikina2[i] != "null") {
                         document.querySelector('.ingredient-list').innerHTML += `<li>${laikina[i]} ${laikina2[i]}</li>`
-                    } 
-                    
+                    }                     
                 }
-
-
             })
         }
         newCocktail();
