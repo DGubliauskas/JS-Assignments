@@ -6,20 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+    <style>
+        .body {
+            background: linear-gradient()
+        }
+
+        .container {
+            padding-top: 50px;
+        }
+
+        .info {
+            display: flex;
+        }
+
+        .right {
+            min-width: 50%;
+            border-radius: 0 20px 20px 0px;
+        }
+
+        .photo img {
+
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        .cocktail-name {
+            text-align: center;
+            font-size: 60px;
+        }
+
+        .glass {
+            text-align: center;
+            font-size: 38px;
+        }
+
+        .alc-vol {
+            text-align: center;
+        }
+
+        .button {
+            text-align:center;
+            margin-top: 25px;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="photo"></div>
-    <div class="cocktail-name"></div>
-    <div class="glass"></div>
-    <div class="alc-vol"></div>
-    <div class="ingredients">
-        <ul>
-            <span class="ingredient-list"></span>
-        </ul>
+<body >
+    <div class="container">
+        <div class="info">
+            <div class="left">
+                <div class="photo"></div>
+            </div>
+            <div class="right bg-warning">
+                <div class="cocktail-name"></div>
+                <div class="glass"></div>
+                <div class="alc-vol"></div>
+                <div class="ingredients">
+                    <ul>
+                        <span class="ingredient-list"></span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="button"><button type="button" class="btn btn-danger" onclick="newCocktail()">New Cocktail</button></div>
     </div>
-
+    
     <script>
+        
+        function newCocktail () {
+            document.querySelector('.ingredient-list').innerHTML = ""
         fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
             .then(resp => resp.json())
             .then(resp => {
@@ -29,7 +86,9 @@
                 document.querySelector('.photo').innerHTML = `<img src=${drinkInfo.strDrinkThumb} />`;
                 document.querySelector('.cocktail-name').innerHTML = `${drinkInfo.strDrink}`;
                 document.querySelector('.glass').innerHTML = "Glass: " + `${drinkInfo.strGlass}`;
-                document.querySelector('.alc-vol').innerHTML = "This drink is " + `<strong>${drinkInfo.strAlcoholic}</strong>`;
+                document.querySelector('.alc-vol').innerHTML = `<strong>${drinkInfo.strAlcoholic}</strong>`;
+
+                
                 
                 const laikina = [
                     `${drinkInfo.strIngredient1}`,
@@ -49,6 +108,14 @@
                     `${drinkInfo.strIngredient15}`,
                 ]
 
+                let ingredients = [];
+
+
+                for (let i = 1; i <= 15; i++) {
+                    let singleIngredient = "`" + "${drinkInfo.strIngredient" + `${[i]}` + "}" + "`";
+                    ingredients.push({singleIngredient});
+                }
+
                 const laikina2 = [
                     `${drinkInfo.strMeasure1}`,
                     `${drinkInfo.strMeasure2}`,
@@ -66,15 +133,19 @@
                     `${drinkInfo.strMeasure14}`,
                     `${drinkInfo.strMeasure15}`,
                 ]
-                
 
-                for (i=0; i < laikina.length; i++) {
-                    if (laikina[i] != 'null') {
-                        document.querySelector('.ingredient-list').innerHTML += `<ul>${laikina[i]} ${laikina2[i]}</ul>`;
-                    }
+
+                for (i = 0; i < laikina.length; i++) {
+                    if (laikina[i] != 'null' && laikina2[i] != "null") {
+                        document.querySelector('.ingredient-list').innerHTML += `<li>${laikina[i]} ${laikina2[i]}</li>`
+                    } 
+                    
                 }
-                
+
+
             })
+        }
+        newCocktail();
     </script>
 </body>
 
