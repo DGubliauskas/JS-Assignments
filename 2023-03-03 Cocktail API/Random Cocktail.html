@@ -93,12 +93,10 @@
                 .then(resp => {
                     console.log(resp)
                     const drinkInfo = resp.drinks[0];
-                    console.log(drinkInfo);
                     document.querySelector('.photo').innerHTML = `<img src=${drinkInfo.strDrinkThumb} />`;
                     document.querySelector('.cocktail-name').innerHTML = `${drinkInfo.strDrink}`;
                     document.querySelector('.glass').innerHTML = "Glass: " + `${drinkInfo.strGlass}`;
                     document.querySelector('.alc-vol').innerHTML = `<strong>${drinkInfo.strAlcoholic}</strong>`;
-
                     let ingredients = ""
                     for (let i = 1; i <= 15; i++) {
                         if (drinkInfo['strIngredient' + i])
@@ -108,7 +106,6 @@
                         </li>`
                     }
                     document.querySelector('.ingredient-list').innerHTML = `${ingredients}`;
-
                 })
         }
         newCocktail();
